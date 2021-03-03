@@ -45,6 +45,9 @@ Da forma como está no ```docker-compose.yml``` o banco de dados terá o mesmo n
     environment:
  ```
  e **DB_NAME** no ```.env```, além de qualquer outra variável de ambiente disponível na [Imagem Postgres](https://hub.docker.com/_/postgres) no DockerHub.
+ 
+## Dica de utilização
+Se for interessante que cada dev tenha seu banco local, pode ser criado um padrão para as configurações de banco (via variáveis de ambiente) e replicadas em um Connector por dev. As únicas configurações diferentes então serão o nome do Connector, CONNECTOR_ID, CONNECTOR_FACTOR e o endpoint (cada um apontando para a maquina de cada dev).
 
 ## Referências
 [Documentação API Connectors](https://help.v3.apisuite.sensedia.com/pt/api-platform-guide/4.3.x.x/api-connectors/api-connectors.html)
