@@ -1,0 +1,43 @@
+version: "3.3"
+services: 
+
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    ports:
+      - ${DB_PORT:-5432}:5432
+    volumes:
+    - ./db-files:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-database}
+      POSTGRES_USER: ${DB_USER:-database}
+  
+  postgres-connector:
+    container_name: postgres-connector
+    image: sensedia/postgres-db-9.4-conn:4.1.0.0-BETA
+    depends_on:
+      - postgres
+    ports:
+      - ${CONNECTOR_PORT:-7098}:7098
+    environment:
+      CONNECTOR_ID: ${CONNECTOR_ID?err}
+      FACTOR: ${CONNECTOR_FACTOR?err}
+      ENABLE_LOG: "true"
+      LEVEL_LOG: "INFO"
+      JAVA_OPTS: "-Djava.security.egd=file:/dev/./urandom -XX:+UseParallelGC -agentlib:jdwp=transport=dt_socket,server=y,suspend=n, -Xmx768m"
+  
+  ngrok:
+    image: wernight/ngrok
+    depends_on:
+      - postgres-connector
+    ports:
+      - 4040:4040
+    command: ngrok http postgres-connector:${CONNECTOR_PORT:-7098}
+
+  adminer:
+    image: adminer
+    depends_on:
+      - postgres
+    restart: always
+    ports:
+      - 8080:8080
