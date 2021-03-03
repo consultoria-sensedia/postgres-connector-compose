@@ -20,7 +20,7 @@ No navegador:
 
 http://localhost:4040 -> Interface do [Ngrok](https://ngrok.com/) (Ngrok exporta serviço localhost para URL pública, nessa url estarão todos os detalhes dele inclusive a **url pública** a ser colada no endpoint do Connector, no Manager)
 
-http://localhost:8080 -> Interface do [Adminer](https://www.adminer.org/) (Cliente BD)
+http://localhost:8080 -> Interface do [Adminer](https://www.adminer.org/) (Ferramenta simples para administração, query, etc de BD)
 
 ## Customizações
 No ```.env``` basta adicionar:
