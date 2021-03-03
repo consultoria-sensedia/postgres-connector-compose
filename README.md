@@ -16,9 +16,11 @@ sudo docker-compose up
 
 #Se utilizando Ngrok, colar a url gerada no "endpoint" do Connector, no Manager.
 ```
-http://localhost:4040 -> [Ngrok](https://ngrok.com/) (exporta serviço localhost para URL pública)
+No navegador:
 
-http://localhost:8080 -> [Adminer](https://www.adminer.org/) (Cliente BD)
+http://localhost:4040 -> Interface do [Ngrok](https://ngrok.com/) (exporta serviço localhost para URL pública)
+
+http://localhost:8080 -> Interface do [Adminer](https://www.adminer.org/) (Cliente BD)
 
 
 ## Referências
