@@ -9,8 +9,8 @@ Repositório com configuração para subir Sensedia API Connector para PostgreSQ
 #subirá: 
 # postgres (usuário, senha e banco padrão: database)
 # sensedia/postgres-db-9.4-conn
-# Ngrok (opcional)
-# Adminer (opcional)
+# Ngrok (opcional, remova no docker-compose.yml se não precisar )
+# Adminer (opcional, remova no docker-compose.yml se não precisar )
 
 sudo docker-compose up 
 
