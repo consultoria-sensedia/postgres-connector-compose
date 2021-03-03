@@ -32,7 +32,7 @@ DB_USER=usuário do banco de dados PgSQL
 CONNECTOR_PORT=porta exposta pelo serviço do conector
 ```
 
-Da forma como está no ```docker-compose.yml``` o banco de dados terá o mesmo no do usuário, se for necessário alteração, basta acrescentar:
+Da forma como está no ```docker-compose.yml``` o banco de dados terá o mesmo nome do usuário (por padrão "database"), se for necessário alteração, basta acrescentar:
 
 ```
       POSTGRES_DB: ${DB_NAME}
