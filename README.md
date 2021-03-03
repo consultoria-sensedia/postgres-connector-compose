@@ -1,4 +1,4 @@
-#Docker-compose para Sensedia API Connector Poastgres
+# Docker-compose para Sensedia API Connector Poastgres
 
 Repositório com configuração para subir Sensedia API Connector para PostgreSQL.
 
